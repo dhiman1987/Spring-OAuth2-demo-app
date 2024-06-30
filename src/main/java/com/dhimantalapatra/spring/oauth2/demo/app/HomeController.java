@@ -8,15 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.security.Principal;
-
 @Controller
-public class OAuth2Controller {
-
-    Logger log = LoggerFactory.getLogger(OAuth2Controller.class);
-    @GetMapping("/login")
-    public String login() {
-        return "redirect:/oauth2/authorization/github";
+public class HomeController {
+    private final Logger log = LoggerFactory.getLogger(HomeController.class);
+    @GetMapping("/")
+    public String home() {
+        return "home";
     }
 
     @GetMapping("/home")
@@ -25,7 +22,7 @@ public class OAuth2Controller {
         String username = user.getAttribute("login");
         String email = user.getAttribute("email");
         log.info("Logged in user details. username={}, email={}",username,email);
-        ModelAndView mav = new ModelAndView("home");
+        ModelAndView mav = new ModelAndView("secure-home");
         mav.addObject("username",username);
         mav.addObject("email",email);
         return mav;
