@@ -1,5 +1,5 @@
 # Spring OAuth2 demo app
- This app demonstrates the usage of Spring Security and OAuth2
+ This app demonstrates the usage of Spring Security and Github OAuth2
 
 ## Local setup
 To Find the Oauth2 *client ID* and *client secret* that needs to be set as environment variables. Navigate to 
