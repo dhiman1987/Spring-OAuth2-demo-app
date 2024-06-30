@@ -56,4 +56,4 @@ replay_pid*
 .DS_store
 
 #project secret keys
-setenv.bat
+donot-commit.txt
