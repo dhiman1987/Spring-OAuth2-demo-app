@@ -20,11 +20,13 @@ public class HomeController {
     public ModelAndView home(OAuth2AuthenticationToken authentication) {
         OAuth2User user = authentication.getPrincipal();
         String username = user.getAttribute("login");
-        String email = user.getAttribute("email");
-        log.info("Logged in user details. username={}, email={}",username,email);
+        String name = user.getAttribute("name");
+        String avatar = user.getAttribute("avatar_url");
+        log.info("Logged in user details. username={}, name={}",username,name);
         ModelAndView mav = new ModelAndView("secure-home");
+        mav.addObject("name",name);
         mav.addObject("username",username);
-        mav.addObject("email",email);
+        mav.addObject("avatar",avatar);
         return mav;
 
     }

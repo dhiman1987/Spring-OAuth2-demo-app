@@ -6,8 +6,14 @@
 </head>
 <body>
 <h1>Spring OAuth 2 Demo app - Secure Home</h1>
-<h2 th:text="${username}"></h2>
-<h3 th:text="${email}"></h3>
-<a href="/logout">Logout</a>
+<div style="text-align:center; margin-left:1rem; width:25%;
+padding:1rem; background-color:#f4f4f4; border:1px solid #e1e1e1; border-radius:5px ">
+    <h2 th:text="${name}"></h2>
+    <p th:text="${username}"></p>
+    <img th:src="${avatar}" alt="avatar" style="height:10rem; width:10rem; border-radius:50%; border:1px solid #e1e1e1"/>
+    <br>
+    <a href="/logout">Logout</a>
+</div>
+
 </body>
 </html>
